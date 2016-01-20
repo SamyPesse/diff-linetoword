@@ -1,5 +1,7 @@
 # diff-linetoword
 
+[![Build Status](https://travis-ci.org/SamyPesse/diff-linetoword.svg?branch=master)](https://travis-ci.org/SamyPesse/diff-linetoword)
+
 Convert line diff to word diff.
 
 ### Installation
