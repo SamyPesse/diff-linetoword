@@ -1,0 +1,31 @@
+{
+    "name": "diff-linetoword",
+    "version": "0.0.0",
+    "description": "Convert line diff to word diff",
+    "main": "./index.js",
+    "homepage": "https://github.com/SamyPesse/diff-linetoword",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "lodash": "~3.7.0",
+        "diff": "2.2.1"
+    },
+    "devDependencies": {
+        "mocha": "1.18.2"
+    },
+    "bugs": {
+        "url": "https://github.com/SamyPesse/diff-linetoword/issues"
+    },
+    "authors": [
+        {
+            "name": "Samy Pesse",
+            "email": "samypesse@gmail.com"
+        }
+    ],
+    "repository": {
+        "type" : "git",
+        "url" : "https://github.com/SamyPesse/diff-linetoword.git"
+    },
+    "scripts": {
+        "test": "mocha --reporter list"
+    }
+}
