@@ -20,6 +20,8 @@ function splitHunk(hunk) {
             newHunk.after += lineContent + '\n';
         } else if (lineType == '-') {
             newHunk.before += lineContent + '\n';
+        } else if (lineType == '\\') {
+            // ignore
         } else {
             newHunk.before += lineContent + '\n';
             newHunk.after += lineContent + '\n';
@@ -31,8 +33,8 @@ function splitHunk(hunk) {
 
 // Convert a hunk to a patch sring
 function hunkToPatchString(hunk, options) {
-    var changes = JsDiff.diffWords(hunk.before, hunk.after);
-    var patch = '@@ -' + hunk.oldStart + ',' + hunk.oldLines+' +' + hunk.newStart + ',' + hunk.newLines + ' @@\n';
+    var changes = JsDiff.diffWordsWithSpace(hunk.before, hunk.after);
+    var patch = options.header.replace('%s', '@@ -' + hunk.oldStart + ',' + hunk.oldLines+' +' + hunk.newStart + ',' + hunk.newLines + ' @@');
 
     _.each(changes, function(change) {
         if (change.added) {
@@ -50,6 +52,7 @@ function hunkToPatchString(hunk, options) {
 // Convert a line-diff patch to a word-diff patch
 function convertToWordDiff(patch, options) {
     options = _.defaults(options || {}, {
+        header: '%s\n',
         added: '{+%s+}',
         removed: '[-%s-]'
     });
