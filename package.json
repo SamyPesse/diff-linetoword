@@ -10,7 +10,7 @@
         "diff": "2.2.1"
     },
     "devDependencies": {
-        "mocha": "1.18.2"
+        "mocha": "2.3.4"
     },
     "bugs": {
         "url": "https://github.com/SamyPesse/diff-linetoword/issues"
