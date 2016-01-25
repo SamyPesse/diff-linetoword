@@ -16,6 +16,11 @@ describe('diff-linetoword', function() {
     it('should correctly handle newline', function() {
         var PATCH = "@@ -1 +1 @@\n-Hello world. cool?\n\\ No newline at end of file\n+Hello. cool? Awesome!\n\\ No newline at end of file\n"
         assert.equal(diffLineToWord(PATCH), "@@ -1,1 +1,1 @@\nHello[- world-]. cool?{+ Awesome!+}\n");
-    })
+    });
+
+    it('should correctly return html', function() {
+        var PATCH = "@@ -1 +1 @@\n-Hello world. cool?\n\\ No newline at end of file\n+Hello. cool? Awesome!\n\\ No newline at end of file\n"
+        assert.equal(diffLineToWord.html(PATCH), '<span class="diff-header">@@ -1,1 +1,1 @@</span>Hello<span class="diff-removed"> world</span>. cool?<span class="diff-added"> Awesome!</span>\n');
+    });
 });
 
