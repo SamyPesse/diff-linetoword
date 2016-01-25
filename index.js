@@ -69,4 +69,14 @@ function convertToWordDiff(patch, options) {
         .value();
 }
 
+// Split patch into a list of hunks
+function splitPatch(patch) {
+    if (_.isString(patch)) patch = JsDiff.parsePatch(patch)[0];
+
+    return _.chain(patch.hunks)
+        .map(splitHunk)
+        .value();
+}
+
 module.exports = convertToWordDiff;
+module.exports.split = splitPatch;
