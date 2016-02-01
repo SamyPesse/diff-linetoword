@@ -1,6 +1,7 @@
 var JsDiff = require('diff');
 var _ = require('lodash');
 var escapeHTML = require('escape-html');
+var nl2br = require('nl2br');
 
 // Convert a hunk into a {before,after} object
 function splitHunk(hunk) {
@@ -84,12 +85,12 @@ function splitPatch(patch) {
 
 // Convert line diff to word diff in HTML
 function convertToHTMLWordDiff(patch) {
-    return convertToWordDiff(patch, {
+    return nl2br(convertToWordDiff(patch, {
         escape: escapeHTML,
         header: '<span class="diff-header">%s</span>',
         added: '<span class="diff-added">%s</span>',
         removed: '<span class="diff-removed">%s</span>'
-    });
+    }));
 }
 
 module.exports = convertToWordDiff;

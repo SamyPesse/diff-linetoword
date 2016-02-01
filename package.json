@@ -8,7 +8,8 @@
     "dependencies": {
         "lodash": "~3.7.0",
         "diff": "2.2.1",
-        "escape-html": "1.0.3"
+        "escape-html": "1.0.3",
+        "nl2br": "0.0.3"
     },
     "devDependencies": {
         "mocha": "2.3.4"
