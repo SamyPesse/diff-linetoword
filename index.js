@@ -64,7 +64,6 @@ function convertToWordDiff(patch, options) {
 
     if (_.isString(patch)) patch = JsDiff.parsePatch(patch)[0];
 
-
     return _.chain(patch.hunks)
         .map(function(hunk) {
             hunk = splitHunk(hunk);

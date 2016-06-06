@@ -6,10 +6,10 @@
     "homepage": "https://github.com/SamyPesse/diff-linetoword",
     "license": "Apache-2.0",
     "dependencies": {
-        "lodash": "~3.7.0",
-        "diff": "2.2.1",
-        "escape-html": "1.0.3",
-        "nl2br": "0.0.3"
+        "lodash": "^3.2.0 || ^4.13.1",
+        "diff": "^2.2.1",
+        "escape-html": "^1.0.3",
+        "nl2br": "^0.0.3"
     },
     "devDependencies": {
         "mocha": "2.3.4"
